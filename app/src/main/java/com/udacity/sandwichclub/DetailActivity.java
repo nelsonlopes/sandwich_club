@@ -69,8 +69,6 @@ public class DetailActivity extends AppCompatActivity {
         Picasso.with(this)
                 .load(sandwich.getImage())
                 .into(ingredientsIv);
-
-        setTitle(sandwich.getMainName());
     }
 
     private void closeOnError() {
