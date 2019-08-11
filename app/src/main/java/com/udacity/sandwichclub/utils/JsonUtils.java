@@ -11,18 +11,26 @@ import java.util.List;
 
 public class JsonUtils {
 
+    public static final String KEY_NAME = "name";
+    public static final String KEY_MAIN_NAME = "mainName";
+    public static final String KEY_ALSO_KNOW_AS = "alsoKnownAs";
+    public static final String KEY_PLACE_OF_ORIGIN = "placeOfOrigin";
+    public static final String KEY_DESCRIPTION = "description";
+    public static final String KEY_IMAGE = "image";
+    public static final String KEY_INGREDIENTS = "ingredients";
+
     public static Sandwich parseSandwichJson(String json) {
         Sandwich sandwich = null;
 
         try {
             JSONObject details = new JSONObject(json);
-            JSONObject name = details.getJSONObject("name");
-            String mainName = name.getString("mainName");
-            JSONArray alsoKnowAs = name.getJSONArray("alsoKnownAs");
-            String placeOfOrigin = details.getString("placeOfOrigin");
-            String description = details.getString("description");
-            String image = details.getString("image");
-            JSONArray ingredients = details.getJSONArray("ingredients");
+            JSONObject name = details.getJSONObject(KEY_NAME);
+            String mainName = name.getString(KEY_MAIN_NAME);
+            JSONArray alsoKnowAs = name.getJSONArray(KEY_ALSO_KNOW_AS);
+            String placeOfOrigin = details.getString(KEY_PLACE_OF_ORIGIN);
+            String description = details.getString(KEY_DESCRIPTION);
+            String image = details.getString(KEY_IMAGE);
+            JSONArray ingredients = details.getJSONArray(KEY_INGREDIENTS);
 
             //
             sandwich = new Sandwich();

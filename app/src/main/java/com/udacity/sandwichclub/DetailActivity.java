@@ -68,6 +68,7 @@ public class DetailActivity extends AppCompatActivity {
         populateUI(sandwich);
         Picasso.with(this)
                 .load(sandwich.getImage())
+                .placeholder(R.mipmap.ic_launcher) // can also be a drawable
                 .into(ingredientsIv);
     }
 
